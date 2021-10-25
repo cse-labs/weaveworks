@@ -8,6 +8,6 @@ ARG USERNAME=vscode
 ENV PATH $PATH:/home/${USERNAME}/.dapr/bin
 
 # Added Gitops CLI
-RUN curl -L "https://github.com/weaveworks/weave-gitops/releases/download/v0.3.1/gitops-$(uname)-$(uname -m)" -o gitops && \
+RUN curl -L "https://github.com/weaveworks/weave-gitops/releases/download/v0.3.3/gitops-$(uname)-$(uname -m)" -o gitops && \
     chmod +x gitops && \
     mv ./gitops /usr/local/bin/gitops

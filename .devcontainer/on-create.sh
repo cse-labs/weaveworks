@@ -27,10 +27,8 @@ docker pull mcr.microsoft.com/dotnet/aspnet:5.0-alpine
 docker pull mcr.microsoft.com/dotnet/sdk:5.0
 
 # set ssh config for joaquinrz/podinfo-deploy
-env | grep -i JOAQUINRZ >> ~/status
-echo ${JOAQUINRZ_DEMO_CONFIG} >| ~/.ssh/config
-echo ${JOAQUINRZ_DEMO_KEY} >| ~/.ssh/weaveworksdemo_key
+mkdir -p ~/.ssh
+echo "${JOAQUINRZ_DEMO_CONFIG}" >| ~/.ssh/config
+echo "${JOAQUINRZ_DEMO_KEY}" >| ~/.ssh/weaveworksdemo_key
 chmod 600 ~/.ssh/config ~/.ssh/weaveworksdemo_key
-chown -R vscode:vscode /home/vscode
-
 echo "on-create complete" >> ~/status

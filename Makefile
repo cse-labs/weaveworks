@@ -138,3 +138,10 @@ jumpbox :
 	# kj
 	# use kje <command>
 	# kje http ngsa-memory:8080/version
+
+weavegitops :
+	# Install and configure Weave GitOps sample app to cluster
+	@gitops install
+	rm -rf podinfo-deploy
+	@git clone git@github.com:joaquinrz/podinfo-deploy.git
+	cd podinfo-deploy && GITHUB_TOKEN='' gitops app add .
